@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+    <singlepages>
+        <page name="Products"
+              path="/dashboard/products"
+              filename="/dashboard/products/view.php"
+              pagetype=""
+              description=""
+              package="v9_package_boilerplate"/>
+        <page name="Product Search"
+              path="/dashboard/products/search"
+              filename="/dashboard/products/search.php"
+              pagetype=""
+              description=""
+              package="v9_package_boilerplate"/>
+        <page name="Product Detail"
+              path="/dashboard/products/detail"
+              filename="/dashboard/products/detail.php"
+              pagetype=""
+              description=""
+              package="v9_package_boilerplate">
+            <attributes>
+                <attributekey handle="exclude_nav">
+                    <value>1</value>
+                </attributekey>
+            </attributes>
+        </page>
+    </singlepages>
+</concrete5-cif>
