@@ -7,6 +7,11 @@ use Concrete\Core\Package\Package;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Page\Theme\Theme;
 
+/**
+ * Package Controller.
+ *
+ * @see https://documentation.concretecms.org/developers/packages/directory-icon-controller
+ */
 class Controller extends Package
 {
     /**
@@ -62,20 +67,36 @@ class Controller extends Package
     /**
      * Install this package.
      *
+     * @see https://documentation.concretecms.org/developers/packages/installation/overview
+     *
      * @return \Concrete\Core\Entity\Package
      */
     public function install()
     {
         $package = parent::install();
 
+        /**
+         * Install components using the CIF format files.
+         *
+         * @see https://documentation.concretecms.org/developers/packages/install-content-using-content-interchange-format-cif
+         */
         $this->installContentFile('install/blocktypes.xml');
         $this->installContentFile('install/singlepages.xml');
-        /** @see https://documentation.concretecms.org/building-website-concretecms/4-create-your-package-and-theme/4-install-the-package-and-theme */
+        /**
+         * @see https://documentation.concretecms.org/building-website-concretecms/4-create-your-package-and-theme/4-install-the-package-and-theme
+         */
         $this->installContentFile('install/theme.xml');
 
         return $package;
     }
 
+    /**
+     * Handling package upgrades.
+     *
+     * @see https://documentation.concretecms.org/developers/packages/handling-package-upgrades
+     *
+     * @return void
+     */
     public function upgrade()
     {
         parent::upgrade();
