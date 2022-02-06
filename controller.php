@@ -28,7 +28,7 @@ class Controller extends Package
      *
      * @var string
      */
-    protected $pkgVersion = '0.0.1';
+    protected $pkgVersion = '0.0.2';
 
     /**
      * @see https://documentation.concretecms.org/developers/packages/adding-custom-code-to-packages
@@ -80,7 +80,7 @@ class Controller extends Package
     {
         parent::upgrade();
 
-        $blockType = BlockType::getByHandle('boilerplate_product_list');
+        $blockType = BlockType::getByHandle('boilerplate_poke_api');
         if (!$blockType) {
             $this->installContentFile('install/blocktypes.xml');
         }

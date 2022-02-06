@@ -3,6 +3,7 @@
 
     <blocktypes>
         <blocktype handle="boilerplate_product_list" package="v9_package_boilerplate"/>
+        <blocktype handle="boilerplate_poke_api" package="v9_package_boilerplate"/>
     </blocktypes>
 
 </concrete5-cif>
