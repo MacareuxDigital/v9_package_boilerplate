@@ -14,12 +14,18 @@ use Psr\Log\LoggerInterface;
 class Controller extends BlockController
 {
     /**
-     * @var string
+     * @var string Defaults to null. If a valid Block Type Set handle is passed,
+     *             the block type will be installed in this set automatically,
+     *             and will show up there in the Add block interface.
      */
     protected $btDefaultSet = 'multimedia';
 
     /**
-     * @var string
+     * @var string The block's primary database table. If specified, and if the block
+     *             only uses this one database table, then the block will be able to
+     *             automatically save its information to this table, provided the
+     *             block's form fields map directly to the columns in the database.
+     *             This value will also be set in db.xml.
      */
     protected $btTable = 'btBoilerplatePokeApi';
 

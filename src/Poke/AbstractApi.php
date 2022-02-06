@@ -18,6 +18,8 @@ abstract class AbstractApi implements ApiInterface, ApplicationAwareInterface
     protected $endpoint;
 
     /**
+     * @link https://pokeapi.co/docs/v2#resource-listspagination-section
+     *
      * @param int $limit
      * @param int $offset
      *

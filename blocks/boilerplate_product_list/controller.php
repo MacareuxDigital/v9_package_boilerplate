@@ -12,13 +12,24 @@ use Macareux\Boilerplate\Search\ProductList;
 
 class Controller extends BlockController
 {
+    /**
+     * @var string Defaults to null. If a valid Block Type Set handle is passed,
+     *             the block type will be installed in this set automatically,
+     *             and will show up there in the Add block interface.
+     */
     protected $btDefaultSet = 'multimedia';
 
+    /**
+     * {@inheritDoc}
+     */
     public function getBlockTypeDescription()
     {
         return t('A boilerplate block.');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getBlockTypeName()
     {
         return t('Product List');
