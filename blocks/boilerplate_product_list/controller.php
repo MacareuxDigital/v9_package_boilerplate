@@ -20,7 +20,7 @@ class Controller extends BlockController
     protected $btDefaultSet = 'multimedia';
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getBlockTypeDescription()
     {
@@ -28,7 +28,7 @@ class Controller extends BlockController
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getBlockTypeName()
     {

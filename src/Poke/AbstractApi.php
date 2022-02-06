@@ -18,7 +18,7 @@ abstract class AbstractApi implements ApiInterface, ApplicationAwareInterface
     protected $endpoint;
 
     /**
-     * @link https://pokeapi.co/docs/v2#resource-listspagination-section
+     * @see https://pokeapi.co/docs/v2#resource-listspagination-section
      *
      * @param int $limit
      * @param int $offset
@@ -50,15 +50,18 @@ abstract class AbstractApi implements ApiInterface, ApplicationAwareInterface
 
     /**
      * @param string $name
-     * @return ResourceItemInterface
+     *
      * @throws ApiException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     *
+     * @return ResourceItemInterface
      */
     public function getItem(string $name): ResourceItemInterface
     {
         /**
          * @see https://www.stashphp.com/
+         *
          * @var ExpensiveCache $expensiveCache
          */
         $expensiveCache = $this->app->make('cache/expensive');
@@ -66,24 +69,25 @@ abstract class AbstractApi implements ApiInterface, ApplicationAwareInterface
             $item = $expensiveCache->getItem($this->getCacheKey($name));
             if ($item->isHit()) {
                 return $item->get();
-            } else {
+            }
                 $item->lock();
                 $result = $this->getApiResource($name);
                 $expensiveCache->save($item->set($result));
 
                 return $result;
-            }
-        } else {
-            return $this->getApiResource($name);
         }
+
+            return $this->getApiResource($name);
     }
 
     /**
      * @param string $name
-     * @return ResourceItemInterface
+     *
      * @throws ApiException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     *
+     * @return ResourceItemInterface
      */
     protected function getApiResource(string $name): ResourceItemInterface
     {
@@ -93,6 +97,7 @@ abstract class AbstractApi implements ApiInterface, ApplicationAwareInterface
 
         if ($response->getStatusCode() === 200) {
             $json = json_decode($response->getBody()->getContents());
+
             return $this->getResult($json);
         }
 

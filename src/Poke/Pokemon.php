@@ -5,9 +5,9 @@ namespace Macareux\Boilerplate\Poke;
 use Macareux\Boilerplate\Poke\Result\ResourceItemInterface;
 
 /**
- * Get resources from Pokémon API
+ * Get resources from Pokémon API.
  *
- * @link https://pokeapi.co/docs/v2#pokemon-section
+ * @see https://pokeapi.co/docs/v2#pokemon-section
  */
 class Pokemon extends AbstractApi
 {

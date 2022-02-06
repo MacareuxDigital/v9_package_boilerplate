@@ -1,5 +1,5 @@
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
+defined('C5_EXECUTE') or die('Access Denied.');
 
 $view->inc('elements/header.php');
 ?>
@@ -10,9 +10,9 @@ $view->inc('elements/header.php');
                 <?php
                 View::element('system_errors', [
                     'format' => 'block',
-                    'error' => isset($error) ? $error : null,
-                    'success' => isset($success) ? $success : null,
-                    'message' => isset($message) ? $message : null,
+                    'error' => $error ?? null,
+                    'success' => $success ?? null,
+                    'message' => $message ?? null,
                 ]);
 
                 echo $innerContent;

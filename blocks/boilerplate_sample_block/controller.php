@@ -145,7 +145,7 @@ class Controller extends BlockController
         /**
          * Load Rich Text Editor.
          *
-         * @link https://documentation.concretecms.org/developers/interface-customization/rich-text-editor/embedding-rich-text-editor
+         * @see https://documentation.concretecms.org/developers/interface-customization/rich-text-editor/embedding-rich-text-editor
          *
          * @var CkeditorEditor $editor
          */
@@ -156,8 +156,8 @@ class Controller extends BlockController
         /**
          * Load File Manager Selector.
          *
-         * @link https://documentation.concretecms.org/developers/appendix/form-widget-reference
-         * @link https://documentation.concretecms.org/developers/working-with-files-and-the-file-manager/working-with-existing-files/add-file-manager-support-to-your-blocks-and-single-pages
+         * @see https://documentation.concretecms.org/developers/appendix/form-widget-reference
+         * @see https://documentation.concretecms.org/developers/working-with-files-and-the-file-manager/working-with-existing-files/add-file-manager-support-to-your-blocks-and-single-pages
          *
          * @var FileManager
          */
@@ -222,6 +222,7 @@ class Controller extends BlockController
      * If a block needs to do more than this (save to multiple tables, upload files, etc...) it should override this.
      *
      * @param array $args
+     *
      * @throws BindingResolutionException
      */
     public function save($args)

@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die('Access Denied.'); ?>
 <!doctype html>
 <html lang="<?php echo Localization::activeLanguage() ?>">
 <head>
@@ -8,7 +8,7 @@
     View::element('header_required', [
         'pageTitle' => $pageTitle ?? '',
         'pageDescription' => $pageDescription ?? '',
-        'pageMetaKeywords' => $pageMetaKeywords ?? ''
+        'pageMetaKeywords' => $pageMetaKeywords ?? '',
     ]);
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">

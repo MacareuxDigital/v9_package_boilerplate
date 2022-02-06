@@ -1,7 +1,5 @@
 <?php
 
-use Concrete\Core\Support\Facade\Url as UrlFacade;
-
 defined('C5_EXECUTE') or die('Access Denied.');
 
 /** @var \Concrete\Core\View\View $view */
