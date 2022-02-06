@@ -34,7 +34,7 @@ class Controller extends BlockController
     protected $listTitle;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getBlockTypeDescription()
     {
@@ -50,7 +50,7 @@ class Controller extends BlockController
     }
 
     /**
-     * The method called when admin user trying to add a block instance
+     * The method called when admin user trying to add a block instance.
      */
     public function add()
     {
@@ -59,11 +59,10 @@ class Controller extends BlockController
     }
 
     /**
-     * The method called when admin user trying to edit a block instance
+     * The method called when admin user trying to edit a block instance.
      */
     public function edit()
     {
-
     }
 
     /**
@@ -95,7 +94,7 @@ class Controller extends BlockController
     }
 
     /**
-     * The method called when a user viewing this block instance
+     * The method called when a user viewing this block instance.
      */
     public function view()
     {
@@ -119,6 +118,9 @@ class Controller extends BlockController
      * Methods starts with action_ can create a custom route.
      *
      * /index.php/current-page-path/view_detail/{resource_id}/{block_id}
+     *
+     * @param mixed $resource_id
+     * @param mixed $block_id
      */
     public function action_view_detail($resource_id, $block_id)
     {
