@@ -145,7 +145,7 @@ class Controller extends BlockController
         /**
          * Load Rich Text Editor.
          *
-         * @see https://documentation.concretecms.org/developers/interface-customization/rich-text-editor/embedding-rich-text-editor
+         * @link https://documentation.concretecms.org/developers/interface-customization/rich-text-editor/embedding-rich-text-editor
          *
          * @var CkeditorEditor $editor
          */
@@ -156,7 +156,8 @@ class Controller extends BlockController
         /**
          * Load File Manager Selector.
          *
-         * @see https://documentation.concretecms.org/developers/appendix/form-widget-reference
+         * @link https://documentation.concretecms.org/developers/appendix/form-widget-reference
+         * @link https://documentation.concretecms.org/developers/working-with-files-and-the-file-manager/working-with-existing-files/add-file-manager-support-to-your-blocks-and-single-pages
          *
          * @var FileManager
          */
