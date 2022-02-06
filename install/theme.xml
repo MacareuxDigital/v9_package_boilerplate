@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <themes>
-        <theme handle="theme_boilerplate" package="v9_package_boilerplate" activated="1" />
+        <theme handle="theme_boilerplate" package="v9_package_boilerplate" activated="0" />
     </themes>
 </concrete5-cif>
