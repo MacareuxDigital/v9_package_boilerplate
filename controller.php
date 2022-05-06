@@ -89,7 +89,7 @@ class Controller extends Package
          */
         $this->installContentFile('install/theme.xml');
 
-        $this->installExternalFileProvider();
+        $this->installExternalFileProvider($package);
 
         return $package;
     }
@@ -122,7 +122,7 @@ class Controller extends Package
 
         $externalFileProvider = Type::getByHandle('mock');
         if (!$externalFileProvider) {
-            $this->installExternalFileProvider();
+            $this->installExternalFileProvider($this->getPackageEntity());
         }
     }
 
@@ -138,8 +138,8 @@ class Controller extends Package
         $this->app->make(ServiceProvider::class)->register();
     }
 
-    private function installExternalFileProvider()
+    private function installExternalFileProvider(\Concrete\Core\Entity\Package $pkg)
     {
-        Type::add('mock', t('Mock'), $this->getPackageEntity());
+        Type::add('mock', t('Mock'), $pkg);
     }
 }
