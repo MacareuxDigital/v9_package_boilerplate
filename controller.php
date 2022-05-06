@@ -3,9 +3,11 @@
 namespace Concrete\Package\V9PackageBoilerplate;
 
 use Concrete\Core\Block\BlockType\BlockType;
+use Concrete\Core\File\ExternalFileProvider\Type\Type;
 use Concrete\Core\Package\Package;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Page\Theme\Theme;
+use Macareux\Boilerplate\File\ServiceProvider;
 
 /**
  * Package Controller.
@@ -33,7 +35,7 @@ class Controller extends Package
      *
      * @var string
      */
-    protected $pkgVersion = '0.0.3';
+    protected $pkgVersion = '0.0.4';
 
     /**
      * @see https://documentation.concretecms.org/developers/packages/adding-custom-code-to-packages
@@ -87,6 +89,8 @@ class Controller extends Package
          */
         $this->installContentFile('install/theme.xml');
 
+        $this->installExternalFileProvider();
+
         return $package;
     }
 
@@ -115,5 +119,27 @@ class Controller extends Package
         if (!$theme) {
             $this->installContentFile('install/theme.xml');
         }
+
+        $externalFileProvider = Type::getByHandle('mock');
+        if (!$externalFileProvider) {
+            $this->installExternalFileProvider();
+        }
+    }
+
+    /**
+     * This method called on every page load
+     *
+     * @see \Concrete\Core\Application\Application::setupPackages
+     *
+     * @return void
+     */
+    public function on_start()
+    {
+        $this->app->make(ServiceProvider::class)->register();
+    }
+
+    private function installExternalFileProvider()
+    {
+        Type::add('mock', t('Mock'), $this->getPackageEntity());
     }
 }
