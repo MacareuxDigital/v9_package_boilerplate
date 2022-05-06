@@ -127,7 +127,7 @@ class MockConfiguration extends Configuration implements ConfigurationInterface
                     $externalFile->setThumbnailUrl($file->getVersion()->getTypeObject()->getThumbnail(false));
                 }
                 $externalFile->setFvDateAdded($file->getDateAdded());
-                // @see
+                // @see https://github.com/concrete5/concrete5/pull/10606
                 if (method_exists($externalFile, 'setSize')) {
                     $externalFile->setSize($file->getVersion()->getSize());
                 }
