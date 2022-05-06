@@ -17,7 +17,7 @@ use Macareux\Boilerplate\File\ServiceProvider;
 class Controller extends Package
 {
     /**
-     * The minimum concrete5 version compatible with this package.
+     * The minimum Concrete version compatible with this package.
      *
      * @var string
      */
