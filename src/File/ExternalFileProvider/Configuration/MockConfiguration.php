@@ -98,7 +98,7 @@ class MockConfiguration extends Configuration implements ConfigurationInterface
         $fileList->setItemsPerPage($itemsPerPage);
         switch ($orderBy) {
             case 'fv.fvTitle':
-                $fileList->sortBy('fv.fvTitle', $orderByDirection);
+                $fileList->sortBy('name', $orderByDirection);
                 break;
             case 'dateModified':
                 $fileList->sortBy('dateModified', $orderByDirection);
