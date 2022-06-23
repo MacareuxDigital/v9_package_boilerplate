@@ -25,5 +25,17 @@
                 </attributekey>
             </attributes>
         </page>
+        <page name="Boilerplate"
+              path="/dashboard/system/boilerplate"
+              filename="/dashboard/system/boilerplate/view.php"
+              pagetype=""
+              description=""
+              package="v9_package_boilerplate"/>
+        <page name="Config"
+              path="/dashboard/system/boilerplate/config"
+              filename="/dashboard/system/boilerplate/config.php"
+              pagetype=""
+              description=""
+              package="v9_package_boilerplate"/>
     </singlepages>
 </concrete5-cif>
