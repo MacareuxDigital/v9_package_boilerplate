@@ -1,0 +1,42 @@
+name: PHPUnit
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  phpunit:
+    name: Run Unit Tests in Docker
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2']  # Add more PHP versions here if needed (e.g. ['8.1', '8.2'])
+        concrete: ['latest-full'] # Add more concrete5 versions here if needed (e.g. ['9.0.0', '9.0.1', '9.0.2'])
+    container: ghcr.io/concrete5-community/docker5:${{ matrix.concrete }}
+    steps:
+      -
+        name: Configure environment
+        run: |
+          switch-composer 2
+          switch-php ${{ matrix.php }}
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set owner
+        run: chown -R www-data:www-data "$GITHUB_WORKSPACE"
+      -
+        name: Prepare package
+        run: ln -s "$GITHUB_WORKSPACE" /app/packages/v9_package_boilerplate
+      -
+        name: Start services
+        run: ccm-service start db web
+      -
+        name: Install package dependencies
+        run: sudo -u www-data composer --ansi --no-interaction install --optimize-autoloader --working-dir=/app/packages/v9_package_boilerplate
+      -
+        name: Install package
+        run: sudo -u www-data /app/concrete/bin/concrete5 --ansi --no-interaction c5:package:install v9_package_boilerplate
+      -
+        name: Run composer test of the package
+        run: sudo -u www-data composer --ansi --no-interaction test --working-dir=/app/packages/v9_package_boilerplate
