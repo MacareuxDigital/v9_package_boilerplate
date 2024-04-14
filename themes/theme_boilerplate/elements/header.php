@@ -11,7 +11,7 @@
         'pageMetaKeywords' => $pageMetaKeywords ?? '',
     ]);
     ?>
-    <link href="<?= $view->getThemePath() ?>/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= $view->getThemePath() ?>/assets/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="<?= $c->getPageWrapperClass() ?>">

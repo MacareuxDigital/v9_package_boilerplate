@@ -3,7 +3,7 @@
 </div>
 
 <?php View::element('footer_required'); ?>
-<script src="<?= $view->getThemePath() ?>/assets/js/bootstrap.bundle.js"></script>
+<script src="<?= $view->getThemePath() ?>/assets/js/main.js"></script>
 
 </body>
 </html>

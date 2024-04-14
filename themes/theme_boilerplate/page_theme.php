@@ -10,7 +10,7 @@ class PageTheme extends Theme
     use BedrockThemeTrait {
         getColorCollection as getBedrockColorCollection;
     }
-    
+
     public function getThemeName()
     {
         return t('Boilerplate');
