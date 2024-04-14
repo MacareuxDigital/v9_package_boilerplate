@@ -9,6 +9,7 @@ $view->inc('elements/header.php');
         <div class="col-sm-12">
             <?php
             $a = new Area('Main');
+            $a->enableGridContainer();
             $a->display($c);
             ?>
         </div>
