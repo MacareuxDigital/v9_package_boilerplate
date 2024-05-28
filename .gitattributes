@@ -1,0 +1,11 @@
+# Export-ignore files in the root directory that start with a dot
+/.* export-ignore
+
+# Export-ignore a directory named "test" in the root directory
+/test export-ignore
+
+# Export-ignore a file named "phpunit.xml" in the root directory
+/phpunit.xml export-ignore
+
+# Export-ignore a file named "README.md" in the root directory
+/README.md export-ignore
