@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<styles version="2.0" lang="scss">
+    <set name="Base Colors">
+        <style name="Primary" variable="primary" type="color"/>
+        <style name="Secondary" variable="secondary" type="color"/>
+        <style name="Light" variable="light" type="color"/>
+    </set>
+    <set name="Theme Custom Colors">
+        <style name="Fun" variable="fun" type="color"/>
+    </set>
+    <set name="Body">
+        <style name="Background" variable="body-bg" type="color"/>
+    </set>
+</styles>

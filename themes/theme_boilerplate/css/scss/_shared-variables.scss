@@ -1,21 +1,16 @@
 @import url(//fonts.googleapis.com/css?family=Fredoka+One);
 @import url(//fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap);
 
-$primary: #ff3c10;
-$secondary: #704c3b;
-$light: #dcd9fe;
-$body-bg: #f6c7b4;
-$fun: #fb4996;
 $light-blue: #8bb2ff;
 
 $theme-colors: (
-        'primary': $primary,
-        'secondary': $secondary,
-        'light': $light,
+        "primary": $primary,
+        "secondary": $secondary,
+        "light": $light
 );
 
 $custom-colors: (
-        'fun': $fun,
+        "fun": $fun
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);

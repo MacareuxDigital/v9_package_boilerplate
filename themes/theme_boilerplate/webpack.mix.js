@@ -9,6 +9,6 @@ mix.webpackConfig({
     }
 });
 
-mix.sass('assets/scss/skins/default/main.scss', 'css/skins/default.css')
-    .js('assets/js/main.js', 'js/main.js')
-    .setPublicPath('..');
+mix.sass('css/presets/default/main.scss', 'css/skins/default.css')
+    .sass('css/presets/wilma/main.scss', 'css/skins/wilma.css')
+    .js('assets/js/main.js', 'js/main.js');

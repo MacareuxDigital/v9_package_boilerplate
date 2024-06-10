@@ -1,2 +1,3 @@
 .DS_Store
 themes/theme_boilerplate/theme_bedrock_documentation/node_modules
+/themes/theme_boilerplate/node_modules
